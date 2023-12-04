@@ -1,8 +1,33 @@
 #include <iostream>
-#include <SDL.h>
+#include "Game.h"
 
-int main(int argc, char* argv[]) {
-    SDL_Init(SDL_INIT_EVERYTHING);
-    std::cout << "Hello, world!" << std::endl;
+int main(int argc, char* argv[]) 
+{
+
+    // 1
+
+    // <<< INITIALIZATION
+    
+    Game game;
+    game.Initialize();
+
+    // INITIALIZATION >>>
+
+    // 2
+
+    // <<< PROCESS LOOP
+    
+    game.Run();
+
+    // PROCESS LOOP >>>
+    
+    // 3
+
+    // <<< END PROCESS
+
+    game.Exit();
+
+    // END PROCESS >>>
+
     return 0;
 }
