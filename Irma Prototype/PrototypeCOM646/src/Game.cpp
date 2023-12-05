@@ -16,12 +16,16 @@ void Game::Initialize() {
 		return;
 	}
 
+	SDL_DisplayMode displayMode;
+	SDL_GetCurrentDisplayMode(0, &displayMode);
+	windowWidth = 800;
+	windowHeight = 600;
 	window = SDL_CreateWindow(
 		NULL, 
 		SDL_WINDOWPOS_CENTERED, 
 		SDL_WINDOWPOS_CENTERED, 
-		800, 
-		600,
+		windowWidth,
+		windowHeight,
 		SDL_WINDOW_BORDERLESS
 		);
 
@@ -35,16 +39,12 @@ void Game::Initialize() {
 		std::cerr << "Error creating SDL renderer" << std::endl;
 		return;
 	}
+	SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN);			// change the video mode to fullscreen
+
 	isRunning = true;
 }
 
-void Game::Run() {
-	while (isRunning) {
-		ProcessInput();
-		Update();
-		Render();
-	}
-}
+
 
 void Game::ProcessInput() {
 	SDL_Event sdlEvent;
@@ -62,17 +62,33 @@ void Game::ProcessInput() {
 	}
 }
 
+void Game::Setup() {
+	// TODO; Initialize game objects...
+}
+
 void Game::Update() {
 	// TODO; Update game objects...
 }
 
 void Game::Render() {
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+	SDL_SetRenderDrawColor(renderer, 21, 21, 21, 255);
 	SDL_RenderClear(renderer);
 
-	// TODO; Render all the game objects...
+	// Draw a rectangle
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_Rect player = {10, 10, 20, 20 };	// create player struct
+	SDL_RenderFillRect(renderer, &player);	// draw player
 
 	SDL_RenderPresent(renderer);
+}
+
+void Game::Run() {
+	Setup();
+	while (isRunning) {
+		ProcessInput();
+		Update();
+		Render();
+	}
 }
 
 void Game::Destroy() {

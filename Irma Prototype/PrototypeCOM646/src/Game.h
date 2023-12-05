@@ -16,10 +16,14 @@ class Game
 
 		void Initialize();
 		void Run();
+		void Setup();
 		void ProcessInput();
 		void Update();
 		void Render();
 		void Destroy();
+
+		int windowWidth;
+		int windowHeight;
 };
 #endif
 
