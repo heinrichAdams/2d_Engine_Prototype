@@ -1,4 +1,8 @@
 ﻿  Game.cpp
+C:\Users\heinp\Documents\2023_ACEDEMIC_YEAR\GROUP PROJECT\prototype\main\2d_Engine_Prototype\Hein Prototype\prototype\Prototype\src\Game.cpp(127,34): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
+C:\Users\heinp\Documents\2023_ACEDEMIC_YEAR\GROUP PROJECT\prototype\main\2d_Engine_Prototype\Hein Prototype\prototype\Prototype\src\Game.cpp(127,34): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\heinp\Documents\2023_ACEDEMIC_YEAR\GROUP PROJECT\prototype\main\2d_Engine_Prototype\Hein Prototype\prototype\Prototype\src\Game.cpp(127,50): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
+C:\Users\heinp\Documents\2023_ACEDEMIC_YEAR\GROUP PROJECT\prototype\main\2d_Engine_Prototype\Hein Prototype\prototype\Prototype\src\Game.cpp(127,50): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   Main.cpp
   Generating Code...
   Prototype.vcxproj -> C:\Users\heinp\Documents\2023_ACEDEMIC_YEAR\GROUP PROJECT\prototype\main\2d_Engine_Prototype\Hein Prototype\prototype\Prototype\Debug\Prototype.exe
