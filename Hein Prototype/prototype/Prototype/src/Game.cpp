@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <iostream>
+#include "Log.h"
 
 
 Game::Game()
@@ -14,11 +15,13 @@ Game::Game()
     windowHeight = 0;
     playerPosition = glm::vec2(0.0, 0.0);
     playerVelocity = glm::vec2(0.0, 0.0);
+
+    Log::message("Game Constructed");
 }
 
 Game::~Game()
 {
-
+    Log::message("Game Destroyed");
 }
 
 void Game::Initialize()
@@ -67,12 +70,15 @@ void Game::Initialize()
 
     isRunning = true;
 
+    Log::message("Game Initialized");
 }
 
 void Game::Setup()
 {
     playerPosition = glm::vec2(50.0, 500.0);
     playerVelocity = glm::vec2(10.0, 0.0);
+
+    Log::message("Game Setup Completed");
 }
 
 void Game::Run()
@@ -84,6 +90,7 @@ void Game::Run()
       Update();
       Draw();
 	}
+    Log::message("Game Quit");
 }
 
 void Game::EventListener()
