@@ -5,12 +5,21 @@
 #include <SDL_image.h>
 #include <glm/glm.hpp>
 
+
 class Game
 {
 private:
+	const int FPS = 60;
+	const int MILLISECONDS_PER_FRAME = 1000 / FPS;
+
 	bool isRunning;
+	int millisecondsSincePreviousFrame;
+	double deltaTime;
+	int timeToWait;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
+	glm::vec2 playerPosition;
+	glm::vec2 playerVelocity;
 
 public:
 
