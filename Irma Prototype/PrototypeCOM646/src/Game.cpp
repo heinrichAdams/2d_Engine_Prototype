@@ -20,8 +20,8 @@ void Game::Initialize() {
 
 	SDL_DisplayMode displayMode;
 	SDL_GetCurrentDisplayMode(0, &displayMode);
-	windowWidth = 800;
-	windowHeight = 600;
+	windowWidth = displayMode.w;
+	windowHeight = displayMode.h;
 	window = SDL_CreateWindow(
 		NULL, 
 		SDL_WINDOWPOS_CENTERED, 
@@ -68,10 +68,15 @@ glm::vec2 playerVelocity;
 
 void Game::Setup() {
 	playerPosition = glm::vec2(10.0, 20.0);
-	playerVelocity = glm::vec2(0.05, 0.0);
+	playerVelocity = glm::vec2(0.5, 0.0);
 }
 
 void Game::Update() {
+	while (!SDL_TICKS_PASSED(SDL_GetTicks(), millisecsPreviousFrame + MILLISECS_PER_FRAME));
+
+	// store the current frame time
+	millisecsPreviousFrame = SDL_GetTicks();		
+
 	playerPosition.x += playerVelocity.x;
 	playerPosition.y += playerVelocity.y;
 }
