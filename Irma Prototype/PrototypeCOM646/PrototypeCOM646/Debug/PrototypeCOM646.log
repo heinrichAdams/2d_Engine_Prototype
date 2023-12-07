@@ -1,0 +1,21 @@
+﻿  Game.cpp
+D:\Glyndwr\COM646\Prototype\2d_Engine_Prototype\Irma Prototype\PrototypeCOM646\PrototypeCOM646\src\Game.cpp(88,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Glyndwr\COM646\Prototype\2d_Engine_Prototype\Irma Prototype\PrototypeCOM646\PrototypeCOM646\src\Game.cpp(89,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  glm.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_sdl.cpp
+  imgui_widgets.cpp
+  Logger.cpp
+  Main.cpp
+  Generating Code...
+  PrototypeCOM646.vcxproj -> D:\Glyndwr\COM646\Prototype\2d_Engine_Prototype\Irma Prototype\PrototypeCOM646\PrototypeCOM646\Debug\PrototypeCOM646.exe
