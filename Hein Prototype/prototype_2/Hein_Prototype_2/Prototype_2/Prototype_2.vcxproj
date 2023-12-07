@@ -151,7 +151,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\InputHandler.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\WindowHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libmodplug-1.dll" />
@@ -165,6 +168,12 @@
     <None Include="SDL2_mixer.dll" />
     <None Include="SDL2_net.dll" />
     <None Include="SDL2_ttf.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\InputHandler.h" />
+    <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\Common.h" />
+    <ClInclude Include="src\WindowHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

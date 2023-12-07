@@ -1,15 +1,19 @@
-#include <iostream>
 #include <SDL.h>
-#include <SDL_image.h>
-#include <SDL_mixer.h>
-#include <SDL_ttf.h>
-#include <SDL_net.h>
+#include "Engine.h"
 
 int main(int argc, char* argv[])
 {
-	SDL_Init(SDL_INIT_EVERYTHING);
+	Engine engine("Test Window", 
+		1280, 
+		720, 
+		0 , 
+		SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
+	
+	engine.Setup();
 
-	std::cout << "SDL Initialized Successfully" << std::endl;
+	engine.ProcessLoop();
+
+	engine.Quit();
 
 	return 0;
 }
