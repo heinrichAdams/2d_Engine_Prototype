@@ -8,10 +8,9 @@
 class Engine
 {
 private:
+	
 	bool continueRunning;
-
 	WindowHandler* window;
-	InputHandler* userInput;
 
 public:
 
@@ -21,6 +20,7 @@ public:
 
 	void Setup();
 	void ProcessLoop();
+	void ProcessUserInput();
 	void Quit();
 
 };

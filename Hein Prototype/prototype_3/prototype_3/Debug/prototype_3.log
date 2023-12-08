@@ -1,0 +1,10 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1119,5): warning MSB8027: Two or more files with the name of main.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\main.cpp, src\main.cpp.
+  Clean.cpp
+  Draw.cpp
+  Initialization.cpp
+  main.cpp
+  main.cpp
+  Generating Code...
+main.obj : error LNK2005: "char const * const TITLE" (?TITLE@@3PBDB) already defined in Initialization.obj
+Debug\main.obj : warning LNK4042: object specified more than once; extras ignored
+C:\Users\heinp\Documents\2023_ACEDEMIC_YEAR\GROUP PROJECT\prototype\main\2d_Engine_Prototype\Hein Prototype\prototype_3\prototype_3\Debug\prototype_3.exe : fatal error LNK1169: one or more multiply defined symbols found

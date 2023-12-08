@@ -6,7 +6,6 @@ Engine::Engine(const char* windowTitle, int windowWidth, int windowHeight,
 	window = new WindowHandler(windowTitle, windowWidth, windowHeight, 
 		windowFlags, rendererFlags);
 
-	userInput = new InputHandler();
 
 	continueRunning = false;
 }
@@ -27,13 +26,28 @@ void Engine::ProcessLoop()
 	{
 		window->BackBuffer();
 		window->FrontBuffer();
-		continueRunning = userInput->HandleEventQue();
+	}
+}
+
+void Engine::ProcessUserInput()
+{
+	SDL_Event event;
+	while (SDL_PollEvent(&event))
+	{
+		switch (event.type)
+		{
+		case SDL_QUIT:
+			
+			break;
+		default:
+			break;
+		}
 	}
 }
 
 void Engine::Quit()
 {
+	window->Close();
 	delete window;
-	delete userInput;
 	SDL_Quit();
 }
