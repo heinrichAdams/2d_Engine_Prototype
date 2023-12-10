@@ -1,8 +1,8 @@
 build:
-	g++ -Wall -std=c++17 -I"./libs/" src/*.cpp -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -llua5.3 -o gameengine
+	gcc -Wall -std=c99 src/*.c -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -o game
 
 run:
-	./gameengine
+	./game
 
 clean:
-	rm gameengine
+	rm game
