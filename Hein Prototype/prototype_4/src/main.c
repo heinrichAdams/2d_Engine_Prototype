@@ -7,8 +7,10 @@
 #include "Config.h" 
 #include "Window.h" 
 #include "Entity.h"
+#include "GameLogic.h"
 #include "Display.h"
 #include "ProcessInput.h"
+
 
 // GLOBAL VARIABLES
 // ---------------------------------------------
@@ -20,6 +22,7 @@ Entity player;
 // ---------------------------------------------
 void Initialize(void);
 void Clean(void);
+void UpdateGame(void);
 // ---------------------------------------------
 
 
@@ -41,6 +44,8 @@ int main(int argc, char* argv[])
         UpdateBackBuffer();
 
         GetInput();
+
+        UpdateGame();
 
         DrawTexture(player.texture, player.xPos, player.yPos);
 

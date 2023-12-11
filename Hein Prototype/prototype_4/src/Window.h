@@ -9,7 +9,12 @@ typedef struct
 {
     SDL_Renderer* renderer;
     SDL_Window* window;
-} Window ;
+    // Inputs
+    int up;
+    int down;
+    int left;
+    int right;
+} Window;
 
 
 #endif
