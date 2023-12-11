@@ -16,6 +16,7 @@
 // ---------------------------------------------
 Window window;
 Entity player;
+Entity projectile;
 // ---------------------------------------------
 
 // FUNCTION PROTOTYPES
@@ -30,6 +31,7 @@ int main(int argc, char* argv[])
 {
     memset(&window, 0,sizeof(Window));
     memset(&player, 0, sizeof(Entity));
+    memset(&projectile, 0, sizeof(Entity));
 
     Initialize();
 
@@ -39,6 +41,8 @@ int main(int argc, char* argv[])
     player.yPos = 200;
     player.texture = LoadTextureFromFile("assets/player.png");
 
+    projectile.texture = LoadTextureFromFile("assets/playerBullet.png");
+
     while(true)
     {
         UpdateBackBuffer();
@@ -47,7 +51,7 @@ int main(int argc, char* argv[])
 
         UpdateGame();
 
-        DrawTexture(player.texture, player.xPos, player.yPos);
+        
 
         UpdateFrontBuffer();
 

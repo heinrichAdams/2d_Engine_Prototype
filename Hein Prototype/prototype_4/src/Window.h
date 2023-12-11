@@ -14,6 +14,7 @@ typedef struct
     int down;
     int left;
     int right;
+    int shoot;
 } Window;
 
 

@@ -7,6 +7,9 @@ typedef struct
 {
     int xPos;
     int yPos;
+    int deltaX;
+    int deltaY;
+    int health;
     SDL_Texture* texture;
 } Entity;
 

@@ -25,6 +25,10 @@ static void GetKeyDown(SDL_KeyboardEvent* keyEvent)
         {
             window.right = 1;
         }
+        if(keyEvent->keysym.scancode == SDL_SCANCODE_SPACE)
+        {
+            window.shoot = 1;
+        }
     }
 }
 
@@ -48,6 +52,10 @@ static void GetKeyUp(SDL_KeyboardEvent* keyEvent)
         if (keyEvent->keysym.scancode == SDL_SCANCODE_D)
         {
             window.right = 0;
+        }
+        if(keyEvent->keysym.scancode == SDL_SCANCODE_SPACE)
+        {
+            window.shoot = 0;
         }
     }
 }
