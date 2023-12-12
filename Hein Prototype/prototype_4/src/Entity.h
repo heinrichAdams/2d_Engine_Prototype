@@ -3,15 +3,21 @@
 
 #include <SDL2/SDL_image.h>
 
-typedef struct
+typedef struct Entity Entity;
+
+struct Entity
 {
-    int xPos;
-    int yPos;
-    int deltaX;
-    int deltaY;
+    int width;
+    int height;
+    float xPos;
+    float yPos;
+    float deltaX;
+    float deltaY;
     int health;
+    int shootDelay;
     SDL_Texture* texture;
-} Entity;
+    Entity* nextElement;
+};
 
 
 #endif

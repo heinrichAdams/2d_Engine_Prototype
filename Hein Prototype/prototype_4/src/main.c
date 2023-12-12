@@ -10,38 +10,35 @@
 #include "GameLogic.h"
 #include "Display.h"
 #include "ProcessInput.h"
+#include "Game.h"
 
 
 // GLOBAL VARIABLES
 // ---------------------------------------------
 Window window;
-Entity player;
-Entity projectile;
+Game game;
 // ---------------------------------------------
 
 // FUNCTION PROTOTYPES
 // ---------------------------------------------
 void Initialize(void);
 void Clean(void);
-void UpdateGame(void);
+void LimitFramerate(long* previousFrame, float* remainder);
 // ---------------------------------------------
 
 
 int main(int argc, char* argv[])
 {
     memset(&window, 0,sizeof(Window));
-    memset(&player, 0, sizeof(Entity));
-    memset(&projectile, 0, sizeof(Entity));
 
     Initialize();
 
     atexit(Clean);
 
-    player.xPos = 200;
-    player.yPos = 200;
-    player.texture = LoadTextureFromFile("assets/player.png");
+    InitializeGame();
 
-    projectile.texture = LoadTextureFromFile("assets/playerBullet.png");
+    long previousFrame = SDL_GetTicks();
+    float remainder = 0;
 
     while(true)
     {
@@ -49,18 +46,39 @@ int main(int argc, char* argv[])
 
         GetInput();
 
-        UpdateGame();
+        window.send.Update();
 
-        
+        window.send.RenderGameObjects();
 
         UpdateFrontBuffer();
 
-        // Use sdl Delay to cap framerate temporarily, saving CPU clock cycles
-        SDL_Delay(15);
+        LimitFramerate(&previousFrame, &remainder);
+        
     }
 
 
     return 0;
+}
+
+void LimitFramerate(long* previousFrame, float* remainder)
+{
+    long wait = 16 + *remainder;
+    long frameTime = SDL_GetTicks() - *previousFrame;
+
+    *remainder -= (int)*remainder;
+
+    wait -= frameTime;
+
+    if(wait < 1)
+    {
+        wait = 1;
+    }
+
+    SDL_Delay(wait);
+
+    *remainder += 0.667;
+
+    *previousFrame = SDL_GetTicks();
 }
 
 void Initialize(void)
